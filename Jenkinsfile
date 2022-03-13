@@ -3,7 +3,7 @@ agent any
 stages {
 stage ('Compile Stage') {
 steps {
-withMaven {(maven : 'apache-maven-3.8.4')
+withMaven(maven : 'apache-maven-3.8.4')
 bat'mvn clean compile'
 }
 }
