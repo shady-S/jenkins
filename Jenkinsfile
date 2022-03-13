@@ -2,7 +2,7 @@ pipeline {
     agent none
     stages {
         stage('Initialize'){
-            withMaven(
+            steps{ withMaven(
                     // Maven installation declared in the Jenkins "Global Tool Configuration"
                     maven: 'maven-3', // (1)
                     // Use `$WORKSPACE/.repository` for local repository folder to avoid shared repositories
@@ -18,6 +18,7 @@ pipeline {
                   sh "mvn clean verify"
 
                 }
+                 }
         }
         stage('Build') {
             steps {
