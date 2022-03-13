@@ -3,9 +3,9 @@ agent any
 stages {
 stage ('Compile Stage') {
 steps {
-  withMaven(){
-'mvn clean compile'
-}
+  //withMaven(){
+bat 'mvn clean compile'
+//}
 }
 }
 stage ('Testing Stage') {
